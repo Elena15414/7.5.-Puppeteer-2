@@ -1,0 +1,17 @@
+{
+  "name": "7.5.-puppeteer-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "cucumber": "cucumber-js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.7.0",
+    "jest-puppeteer": "^9.0.2",
+    "puppeteer": "^21.11.0"
+  }
+}
