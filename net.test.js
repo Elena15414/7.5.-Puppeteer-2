@@ -47,7 +47,7 @@ describe("reservation cinema tests", () => {
       visible: true,
     });
     const actual = await getText(page, ".acceptin-button");
-    expect(actual).toContain("Забронировать");
+    expect(actual).toContain("Получить код бронирования");
   }, 70000);
 
     test ("Mickey Mouse negative", async() =>{

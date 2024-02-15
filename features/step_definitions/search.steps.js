@@ -1,8 +1,7 @@
-const fetch = require("node-fetch");
 const puppeteer = require("puppeteer");
 const chai = require("chai");
 const expect = chai.expect;
-const { Given, When, Then, Before, After } = require("@cucumber/cucumber");
+const { Given, When, Then, Before, After } = require("cucumber");
 const { putText, getText, clickElement } = require("../../lib/commands.js");
 var {setDefaultTimeout} = require("cucumber");
 setDefaultTimeout(60 * 1000);
@@ -44,8 +43,8 @@ Then ("user is booking tickets", async function () {
 });
 
 Then("user confirms the booking {string}", async function (string) {
-  const actual = await getText(this.page, ".acceptin-button");
-  expect(actual).toContain("Забронировать");
+  const actual =await getText(this.page, ".acceptin-button");
+  await expect(actual).contain("Забронировать");
 }, 70000);
 
 
@@ -73,6 +72,6 @@ Then ("user has confirmed the booking of tickets", async function () {
   return await clickElement(this.page, ".acceptin-button");
 });
 Then("Get Error {string}", async function (string) {
-  const actual = await getText(this.page, ".acceptin-button");
+  const actual =await getText(this.page, ".acceptin-button");
   await expect(actual).contain("Забронировать");
 });
